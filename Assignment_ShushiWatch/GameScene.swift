@@ -8,8 +8,21 @@
 
 import SpriteKit
 import GameplayKit
+import WatchConnectivity
 
-class GameScene: SKScene {
+class GameScene: SKScene, WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        <#code#>
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        <#code#>
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        <#code#>
+    }
+    
     
  
     
