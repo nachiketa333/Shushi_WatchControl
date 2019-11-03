@@ -16,14 +16,27 @@
                     <items>
                         <button width="1" alignment="left" title="Right" id="nCb-1w-Nm5">
                             <color key="titleColor" red="0.0" green="1" blue="0.96375426475649917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="rightButtonPressed" destination="AgC-eL-Hgc" id="zdb-90-EQz"/>
+                            </connections>
                         </button>
                         <button width="1" alignment="left" title="Left" id="Q1G-jr-FiA">
                             <color key="titleColor" red="0.0" green="0.97987684535304265" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="leftButtonPressed" destination="AgC-eL-Hgc" id="kIS-gO-gzu"/>
+                            </connections>
                         </button>
                         <button width="1" alignment="left" title="Pause" id="USG-sY-irv">
                             <color key="titleColor" red="0.0087351832792375017" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="pauseButtonPressed" destination="AgC-eL-Hgc" id="lvO-yy-cTl"/>
+                            </connections>
                         </button>
+                        <label width="136" alignment="left" text="connectionLabel" id="Bz2-83-RST"/>
                     </items>
+                    <connections>
+                        <outlet property="connectionLabel" destination="Bz2-83-RST" id="mz9-Ok-43f"/>
+                    </connections>
                 </controller>
             </objects>
         </scene>

@@ -12,19 +12,81 @@ import WatchConnectivity
 
 class GameScene: SKScene, WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        <#code#>
+        
     }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
-        <#code#>
+        
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
-        <#code#>
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any])
+       
+        
+    {
+       
+        print("Phone: I received a message: \(message)")
+        
+        let movement = message["movement"] as! String
+        print("\(movement)")
+        playerMovement(movement: movement)
+        
     }
     
     
+    
+   
+    
+    func playerMovement(movement:String){
+        if(movement == "left")
+        {
+            print("LEFT Button Pressed")
+            // moved the cat to left position
+            cat.position = CGPoint(x:self.size.width*0.25, y:100)
+            
+            // changes the cat's direction
+            let facingRight = SKAction.scaleX(to: 1, duration: 0)
+            self.cat.run(facingRight)
+            
+            // saves the position
+            self.catPosition = "left"
+            // animation code call
+            punchAnimation()
+            
+            
+        }
+        else if(movement == "right"){
+            print("RIGHT Button Pressed")
+            // moved the cat to right position
+            cat.position = CGPoint(x:self.size.width*0.85, y:100)
+            
+            // changes the cat's direction
+            let facingLeft = SKAction.scaleX(to: -1, duration: 0)
+            self.cat.run(facingLeft)
+            
+            // saves the position
+            self.catPosition = "right"
+            punchAnimation()
+        }
+        
+    }
  
+    func punchAnimation(){
+        let image1 = SKTexture(imageNamed: "character1")
+        let image2 = SKTexture(imageNamed: "character2")
+        let image3 = SKTexture(imageNamed: "character3")
+        
+        let punchTextures = [image1, image2, image3, image1]
+        
+        let punchAnimation = SKAction.animate(
+            with: punchTextures,
+            timePerFrame: 0.1)
+        
+        self.cat.run(punchAnimation)
+    }
     
     let cat = SKSpriteNode(imageNamed: "character1")
     let sushiBase = SKSpriteNode(imageNamed:"roll")
@@ -81,6 +143,14 @@ class GameScene: SKScene, WCSessionDelegate {
         background.zPosition = -1
         addChild(background)
         
+        if (WCSession.isSupported() == true) {
+            print("WC is supported!")
+            // create a communication session with the watch
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
+        
         // add cat
         cat.position = CGPoint(x:self.size.width*0.25, y:100)
         addChild(cat)
@@ -113,7 +183,7 @@ class GameScene: SKScene, WCSessionDelegate {
         }
     }
     
-    
+   
     override func update(_ currentTime: TimeInterval) {
     }
     
@@ -151,6 +221,20 @@ class GameScene: SKScene, WCSessionDelegate {
             self.spawnSushi()
         }
         
+        func PunchAnimation(){
+            let image1 = SKTexture(imageNamed: "character1")
+            let image2 = SKTexture(imageNamed: "character2")
+            let image3 = SKTexture(imageNamed: "character3")
+            
+            let punchTextures = [image1, image2, image3, image1]
+            
+            let punchAnimation = SKAction.animate(
+                with: punchTextures,
+                timePerFrame: 0.1)
+            
+            self.cat.run(punchAnimation)
+            
+        }
         // ------------------------------------
         // MARK: SWAP THE LEFT & RIGHT POSITION OF THE CAT
         //  If person taps left side, then move cat left
@@ -171,6 +255,7 @@ class GameScene: SKScene, WCSessionDelegate {
             // save cat's position
             self.catPosition = "left"
             
+            
         }
         else {
             print("TAP RIGHT")
@@ -183,7 +268,9 @@ class GameScene: SKScene, WCSessionDelegate {
             
             // save cat's position
             self.catPosition = "right"
+        
         }
+        
         
         // ------------------------------------
         // MARK: ANIMATION OF PUNCHING CAT
