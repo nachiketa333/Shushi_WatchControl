@@ -41,7 +41,7 @@ class GameScene: SKScene, WCSessionDelegate {
    
     
     func playerMovement(movement:String){
-        if(movement == "left")
+        if(movement == "leftTap")
         {
             print("LEFT Button Pressed")
             // moved the cat to left position
@@ -58,7 +58,7 @@ class GameScene: SKScene, WCSessionDelegate {
             
             
         }
-        else if(movement == "right"){
+        else if(movement == "rightTap"){
             print("RIGHT Button Pressed")
             // moved the cat to right position
             cat.position = CGPoint(x:self.size.width*0.85, y:100)
