@@ -19,6 +19,8 @@
 		8B06F6BE236F4EDC00149BCD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B06F6BD236F4EDC00149BCD /* InterfaceController.swift */; };
 		8B06F6C0236F4EDC00149BCD /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B06F6BF236F4EDC00149BCD /* ExtensionDelegate.swift */; };
 		8B06F6C2236F4EDC00149BCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B06F6C1236F4EDC00149BCD /* Assets.xcassets */; };
+		8B06F6D2236F506B00149BCD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B06F6D1236F506B00149BCD /* GameScene.swift */; };
+		8B06F6D6236F56A800149BCD /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B06F6D5236F56A800149BCD /* SushiPiece.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		8B06F6BF236F4EDC00149BCD /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		8B06F6C1236F4EDC00149BCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B06F6C3236F4EDC00149BCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B06F6D1236F506B00149BCD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		8B06F6D5236F56A800149BCD /* SushiPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 				8B06F6A1236F4EDB00149BCD /* Assets.xcassets */,
 				8B06F6A3236F4EDB00149BCD /* LaunchScreen.storyboard */,
 				8B06F6A6236F4EDB00149BCD /* Info.plist */,
+				8B06F6D1236F506B00149BCD /* GameScene.swift */,
+				8B06F6D5236F56A800149BCD /* SushiPiece.swift */,
 			);
 			path = Assignment_ShushiWatch;
 			sourceTree = "<group>";
@@ -286,6 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B06F6D2236F506B00149BCD /* GameScene.swift in Sources */,
+				8B06F6D6236F56A800149BCD /* SushiPiece.swift in Sources */,
 				8B06F69D236F4ED900149BCD /* ViewController.swift in Sources */,
 				8B06F69B236F4ED900149BCD /* AppDelegate.swift in Sources */,
 			);
