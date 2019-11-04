@@ -55,6 +55,7 @@ class GameScene: SKScene, WCSessionDelegate {
             self.catPosition = "left"
             // animation code call
             punchAnimation()
+            spawnSushi()
             
             
         }
@@ -70,6 +71,7 @@ class GameScene: SKScene, WCSessionDelegate {
             // saves the position
             self.catPosition = "right"
             punchAnimation()
+            spawnSushi()
         }
         
     }

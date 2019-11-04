@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Assignment_ShushiWatch_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="100" alignment="left" verticalAlignment="center" text="Timer" id="Bz2-83-RST">
+                        <label width="136" height="25" alignment="left" verticalAlignment="center" text="Timer" id="Bz2-83-RST">
                             <color key="textColor" red="0.0087351832790000007" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
                         <button width="1" alignment="left" title="Start/Pause" id="USG-sY-irv">
@@ -41,7 +41,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="30.5"/>
+            <point key="canvasLocation" x="34" y="30"/>
         </scene>
     </scenes>
 </document>

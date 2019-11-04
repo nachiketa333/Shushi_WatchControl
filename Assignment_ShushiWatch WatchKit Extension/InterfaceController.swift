@@ -71,7 +71,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     var countdownTimer: Timer!
-    var totalTime = 60
+    var totalTime = 25
 
     
     func startTimer() {
@@ -86,6 +86,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             totalTime -= 1
         } else {
             endTimer()
+            counter = 2;
         }
     }
     
@@ -103,6 +104,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var counter:Int = 0
 
     @IBAction func pauseButtonPressed() {
+       
         
         self.counter = self.counter + 1;
         print("counter\(counter)")
