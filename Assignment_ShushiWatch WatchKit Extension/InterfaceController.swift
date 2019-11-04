@@ -18,8 +18,14 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBOutlet weak var connectionLabel: WKInterfaceLabel!
     
+   
+    @IBAction func timerButtom() {
+    }
+    
+    
     @IBAction func rightButtonPressed() {
-        
+         if(counter % 2 != 0)
+         {
         if (WCSession.default.isReachable == true) {
             print("right Movement")
             // Here is the message you want to send
@@ -33,11 +39,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         {
             connectionLabel.setText("Cannot reach Phone!")
         }
+        }
+        else
+         {
+            connectionLabel.setText("GAME STOPPED")
+        }
 
     }
     
     @IBAction func leftButtonPressed() {
-        
+        if(counter % 2 != 0)
+        {
         if (WCSession.default.isReachable == true) {
             print("left Movement")
             // Here is the message you want to send
@@ -51,9 +63,60 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         {
             connectionLabel.setText("Cannot reach Phone!")
         }
+        }
+        else
+        {
+            connectionLabel.setText("GAME STOPPED")
+        }
     }
     
+    var countdownTimer: Timer!
+    var totalTime = 60
+
+    
+    func startTimer() {
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+    
+    
+    @objc func updateTime() {
+        connectionLabel.setText("\(timeFormatted(totalTime))")
+        
+        if totalTime != 0 {
+            totalTime -= 1
+        } else {
+            endTimer()
+        }
+    }
+    
+    func endTimer() {
+        countdownTimer.invalidate()
+    }
+    
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        //     let hours: Int = totalSeconds / 3600
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    var counter:Int = 0
+
     @IBAction func pauseButtonPressed() {
+        
+        self.counter = self.counter + 1;
+        print("counter\(counter)")
+        
+        if(counter % 2 == 0)
+        {
+           endTimer()
+            
+        }
+        else
+        {
+            
+            startTimer()
+        }
         
     }
     
@@ -77,6 +140,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         if WCSession.isSupported() {
             WCSession.default.delegate = self
             WCSession.default.activate()
+            
         }
             // This method is called when watch view controller is about to be visible to user
         super.willActivate()
