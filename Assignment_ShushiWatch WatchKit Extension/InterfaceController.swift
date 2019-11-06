@@ -23,6 +23,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     
+    @IBAction func powerUps() {
+        
+        totalTime = 30
+    }
     @IBAction func rightButtonPressed() {
          if(counter % 2 != 0)
          {

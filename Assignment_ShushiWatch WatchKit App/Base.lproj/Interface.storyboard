@@ -14,6 +14,12 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Assignment_ShushiWatch_WatchKit_App" customModuleProvider="target">
                     <items>
+                        <button width="1" alignment="left" title="Power Ups" id="EJl-lz-6Ub">
+                            <color key="titleColor" red="0.97492731030000002" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="powerUps" destination="AgC-eL-Hgc" id="ZSi-Zq-Mbx"/>
+                            </connections>
+                        </button>
                         <label width="136" height="25" alignment="left" verticalAlignment="center" text="Timer" id="Bz2-83-RST">
                             <color key="textColor" red="0.0087351832790000007" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
